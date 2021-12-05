@@ -188,16 +188,17 @@ body {
   text-align: center;
 }
 
-.hero-btn,
-.form-btn {
+.footer-form-btn,
+.form-btn,
+.hero-btn {
   padding: 10px 32px;
 
   font-family: inherit;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
-  line-height: 1.62;
-  letter-spacing: 0.03em;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
   cursor: pointer;
 
   color: var(--first-title-color);
@@ -212,7 +213,10 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-btn,
+.footer-form-btn:hover,
+.form-btn:hover,
+.footer-form-btn:focus,
+.form-btn:focus,
 .hero-btn:hover,
 .hero-btn:focus {
   color: var(--first-text-color);
@@ -509,6 +513,7 @@ a[href="https://www.google.com.ua/maps/place/бул.+Леси+Украинки,+
 
 .adr-item {
   display: block;
+  width: 230px;
 }
 
 .adr-item:not(:last-child) {
@@ -526,8 +531,9 @@ a[href="https://www.google.com.ua/maps/place/бул.+Леси+Украинки,+
 
 .footer-box {
   padding-top: 12px;
+  margin-right: 93px;
 }
-
+.footer-title-form,
 .footer-text {
   margin-bottom: 20px;
   color: #ffffff;
@@ -572,6 +578,52 @@ a[href="https://www.google.com.ua/maps/place/бул.+Леси+Украинки,+
   width: 20px;
   height: 20px;
   fill: currentColor;
+}
+
+.footer-title-form {
+  display: block;
+}
+
+.footer-form-input {
+  width: 358px;
+  height: 50px;
+  margin-right: 8px;
+  padding: 15px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  color: rgba(255, 255, 255, 0.6);
+  background-color: inherit;
+  border-radius: 4px;
+}
+
+.footer-form {
+}
+
+.label-box {
+  display: flex;
+}
+
+.footer-form-btn {
+  display: flex;
+  align-items: center;
+  height: 50px;
+
+  padding: 10px 29px;
+}
+
+.span {
+  margin-right: 10px;
+}
+
+.icon-icon-send {
+  width: 24px;
+  height: 24px;
+  fill: #ffffff;
+}
+
+.footer-form-box {
+  width: 100%;
+  padding-top: 12px;
 }
 /* -------------------портфолио ----------------------------*/
 
@@ -774,6 +826,8 @@ a[href="https://www.google.com.ua/maps/place/бул.+Леси+Украинки,+
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-title {
@@ -785,25 +839,41 @@ a[href="https://www.google.com.ua/maps/place/бул.+Леси+Украинки,+
   margin-bottom: 12px;
 }
 
-.modal-form-field {
+.modal-input-text:focus-within .footer-modal-icon {
+  fill: var(--accent);
+}
+
+.modal-input-text:focus-within .modal-input {
+  border-color: var(--accent);
+}
+
+.footer-modal-icon {
+  position: absolute;
+  left: 11px;
+  bottom: 12px;
+
+  width: 18px;
+  height: 18px;
 }
 
 .modal-input-text {
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
-
-  display: block;
-  margin-bottom: 4px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input {
   width: 100%;
   height: 40px;
-  padding: 11px 12px;
+  padding: 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  margin-bottom: 10px;
   outline: none;
 }
 
@@ -817,6 +887,10 @@ a[href="https://www.google.com.ua/maps/place/бул.+Леси+Украинки,+
   outline: none;
 }
 
+.modal-input-text:focus-within .modal-textarea {
+  border-color: var(--accent);
+}
+
 .modal-textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
   font-size: 12px;
@@ -824,11 +898,52 @@ a[href="https://www.google.com.ua/maps/place/бул.+Леси+Украинки,+
   letter-spacing: 0.01em;
 }
 
+.label-checkbox-text {
+  display: flex;
+  align-items: center;
+  margin: 20px 11px 30px;
+  text-align: end;
+
+  font-size: 14px;
+  line-height: 1.71;
+  cursor: pointer;
+}
+
+.modal-span {
+  fill: transparent;
+}
+
+.checkbox:checked + .label-checkbox-text .modal-span {
+  border: none;
+  fill: #ffffff;
+  background-color: var(--accent);
+}
+
+.modal-span {
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  margin-right: 5px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.label-checkbox-link {
+  text-decoration-skip-ink: none;
+  color: var(--accent);
+}
+
 .form-btn {
   display: block;
   margin: 0 auto;
   padding: 10px 55px;
   letter-spacing: 0.06em;
+  background-color: #2196f3;
+}
+.modal-btn:focus .modal-svg,
+.modal-btn:hover .modal-svg {
+  fill: var(--accent);
 }
 
 /* - cubic-bezier(0.4, 0, 0.2, 1) */
